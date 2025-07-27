@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمونه کارها - آژانس تبلیغاتی میراد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ffcc00;
+            --secondary: #fff;
+            --accent: #ff6b6b;
+            --dark: #0a0a0a;
+            --darker: #050505;
+            --light: #ffffff;
+            --gray: #888888;
+            --dark-gray: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Vazir', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 204, 0, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 204, 0, 0.1) 0%, transparent 20%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 80px 0 60px;
+            position: relative;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 5px 15px rgba(255, 204, 0, 0.3));
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--primary));
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 60px 0 100px;
+        }
+
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.3),
+                0 0 0 1px rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08);
+            cursor: pointer;
+            transform: translateY(0);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 
+                0 25px 50px rgba(255, 204, 0, 0.25),
+                0 0 0 1px rgba(255, 204, 0, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .portfolio-img-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-content {
+            padding: 25px;
+            position: relative;
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--light);
+            transition: color 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-title {
+            color: var(--primary);
+        }
+
+        .portfolio-desc {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            min-height: 60px;
+        }
+
+        .view-btn {
+            background: linear-gradient(45deg, var(--primary), var(--primary));
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+        }
+
+        .category-tag {
+            display: inline-block;
+            background: rgba(255, 204, 0, 0.15);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+        /* Project Detail Section */
+        .project-detail {
+            display: none;
+            padding: 60px 0;
+            animation: fadeInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .detail-content {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .detail-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary));
+        }
+
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .detail-title {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin: 0;
+            background: linear-gradient(45deg, var(--primary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-btn {
+            background: linear-gradient(45deg, var(--accent), #ff4757);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .detail-img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-img:hover {
+            transform: scale(1.01);
+        }
+
+        .detail-desc {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 35px;
+            text-align: justify;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--primary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(255, 204, 0, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .feature:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover i {
+            transform: scale(1.15);
+        }
+
+        .feature h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--light);
+        }
+
+        .feature p {
+            color: var(--gray);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Active States */
+        .portfolio-grid:not(.active) {
+            display: none;
+        }
+
+        .project-detail.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: var(--gray);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .detail-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+            
+            .detail-content {
+                padding: 25px 20px;
+            }
+            
+            .detail-title {
+                font-size: 1.8rem;
+            }
+            
+            .detail-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            header {
+                padding: 60px 0 40px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-content {
+                padding: 20px;
+            }
+            
+            .portfolio-title {
+                font-size: 1.1rem;
+            }
+            
+            .portfolio-img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-content">
+            <img src="mirad-logo.png" alt="آژانس تبلیغاتی میراد" class="logo">
+            <h1>نمونه کارها</h1>
+            <p class="subtitle">مجموعه‌ای از پروژه‌های موفق در حوزه‌های مختلف طراحی وب و دیجیتال مارکتینگ</p>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid (Initial View) -->
+    <div id="portfolioGrid" class="portfolio-grid active">
+        <!-- 1. رستوران سنتی -->
+        <div class="portfolio-item" onclick="handleProjectClick('traditional')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="رستوران سنتی" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">رستوران</span>
+                <h3 class="portfolio-title">رستوران سنتی</h3>
+                <p class="portfolio-desc">طراحی وبسایت برای رستوران سنتی با منوی دیجیتال و سیستم رزرو آنلاین</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('traditional')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 2. رستوران فست فود -->
+        <div class="portfolio-item" onclick="handleProjectClick('fastfood')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="فست فود" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">فست فود</span>
+                <h3 class="portfolio-title">رستوران فست فود</h3>
+                <p class="portfolio-desc">وبسایت فروشگاهی با سیستم سفارش آنلاین و پنل مدیریت</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('fastfood')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 3. کارخانه الکتریکی -->
+        <div class="portfolio-item" onclick="handleProjectClick('factory')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="کارخانه" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">صنعتی</span>
+                <h3 class="portfolio-title">کارخانه پروفیل الکتریکی</h3>
+                <p class="portfolio-desc">وبسایت شرکتی با کاتالوگ محصولات و سیستم درخواست قیمت</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('factory')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 4. لباس فروشی آنلاین -->
+        <div class="portfolio-item" onclick="handleProjectClick('clothing')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="لباس فروشی" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">فروشگاه اینترنتی</span>
+                <h3 class="portfolio-title">لباس فروشی آنلاین</h3>
+                <p class="portfolio-desc">فروشگاه اینترنتی با سیستم پرداخت و مدیریت انبار</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('clothing')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 5. کلینیک زیبایی -->
+        <div class="portfolio-item" onclick="handleProjectClick('beauty')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1597030719108-58f577a8b4d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="کلینیک زیبایی" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">سلامت و زیبایی</span>
+                <h3 class="portfolio-title">کلینیک زیبایی</h3>
+                <p class="portfolio-desc">وبسایت کلینیک زیبایی با سیستم رزرو نوبت و گالری خدمات</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('beauty')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 6. آموزشگاه زبان -->
+        <div class="portfolio-item" onclick="handleProjectClick('language')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="آموزشگاه زبان" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">آموزش</span>
+                <h3 class="portfolio-title">آموزشگاه زبان</h3>
+                <p class="portfolio-desc">وبسایت آموزشگاه زبان با سیستم ثبت نام و دوره‌های آنلاین</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('language')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 7. شرکت نرم‌افزاری -->
+        <div class="portfolio-item" onclick="handleProjectClick('software')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="شرکت نرم‌افزاری" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">فناوری</span>
+                <h3 class="portfolio-title">شرکت نرم‌افزاری</h3>
+                <p class="portfolio-desc">وبسایت شرکت نرم‌افزاری با نمایش پروژه‌ها و خدمات تخصصی</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('software')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 8. فروشگاه لوازم التحریر -->
+        <div class="portfolio-item" onclick="handleProjectClick('stationery')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="لوازم التحریر" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">فروشگاه</span>
+                <h3 class="portfolio-title">فروشگاه لوازم التحریر</h3>
+                <p class="portfolio-desc">فروشگاه آنلاین لوازم التحریر با دسته‌بندی محصولات</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('stationery')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 9. سالن بدنسازی -->
+        <div class="portfolio-item" onclick="handleProjectClick('gym')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="سالن بدنسازی" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">ورزش</span>
+                <h3 class="portfolio-title">سالن بدنسازی</h3>
+                <p class="portfolio-desc">وبسایت سالن بدنسازی با برنامه تمرینی و ثبت نام آنلاین</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('gym')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 10. دفتر معماری -->
+        <div class="portfolio-item" onclick="handleProjectClick('architecture')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="دفتر معماری" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">معماری</span>
+                <h3 class="portfolio-title">دفتر معماری</h3>
+                <p class="portfolio-desc">وبسایت دفتر معماری با نمایش پروژه‌ها و خدمات طراحی</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('architecture')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 11. فروشگاه لوازم خانگی -->
+        <div class="portfolio-item" onclick="handleProjectClick('appliances')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="لوازم خانگی" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">فروشگاه</span>
+                <h3 class="portfolio-title">فروشگاه لوازم خانگی</h3>
+                <p class="portfolio-desc">فروشگاه آنلاین لوازم خانگی با مقایسه محصولات</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('appliances')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 12. کافی شاپ -->
+        <div class="portfolio-item" onclick="handleProjectClick('cafe')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1554119620-7a4a21588a7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="کافی شاپ" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">رستوران</span>
+                <h3 class="portfolio-title">کافی شاپ</h3>
+                <p class="portfolio-desc">وبسایت کافی شاپ با منوی دیجیتال و سیستم رزرو میز</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('cafe')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 13. شرکت حمل و نقل -->
+        <div class="portfolio-item" onclick="handleProjectClick('transport')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="حمل و نقل" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">حمل و نقل</span>
+                <h3 class="portfolio-title">شرکت حمل و نقل</h3>
+                <p class="portfolio-desc">وبسایت شرکت حمل و نقل با محاسبه آنلاین هزینه</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('transport')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 14. فروشگاه لوازم ورزشی -->
+        <div class="portfolio-item" onclick="handleProjectClick('sports')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="لوازم ورزشی" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">ورزش</span>
+                <h3 class="portfolio-title">فروشگاه لوازم ورزشی</h3>
+                <p class="portfolio-desc">فروشگاه آنلاین لوازم ورزشی با راهنمای خرید</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('sports')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+
+        <!-- 15. کلینیک دندانپزشکی -->
+        <div class="portfolio-item" onclick="handleProjectClick('dental')">
+            <div class="portfolio-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1588776813677-77d8010ae684?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="کلینیک دندان" class="portfolio-img">
+                <div class="portfolio-overlay"></div>
+            </div>
+            <div class="portfolio-content">
+                <span class="category-tag">سلامت</span>
+                <h3 class="portfolio-title">کلینیک دندانپزشکی</h3>
+                <p class="portfolio-desc">وبسایت کلینیک دندان با سیستم رزرو نوبت و مقالات آموزشی</p>
+                <button class="view-btn" onclick="event.stopPropagation(); showProject('dental')">
+                    <i class="fas fa-eye"></i>
+                    مشاهده جزئیات
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Detail Sections -->
+    <!-- 1. رستوران سنتی Detail -->
+    <div id="project-traditional" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">رستوران سنتی</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="رستوران سنتی" class="detail-img">
+            <p class="detail-desc">
+                طراحی وبسایت حرفه‌ای برای رستوران سنتی با تمرکز بر تجربه کاربری و ظاهر اصیل ایرانی. 
+                شامل منوی دیجیتال تعاملی، سیستم رزرو آنلاین، گالری تصاویر غذاها و امکانات ویژه برای مشتریان وفادار.
+                این پروژه با استفاده از تکنولوژی‌های مدرن طراحی شده تا تجربه بهتری برای مشتریان فراهم کند.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-utensils"></i>
+                    <h4>منوی دیجیتال</h4>
+                    <p>نمایش تعاملی منو با قابلیت جستجو و فیلتر</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-calendar-check"></i>
+                    <h4>رزرو آنلاین</h4>
+                    <p>سیستم رزرو میز با تقویم هوشمند</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>واکنشگرا</h4>
+                    <p>سازگار با تمام دستگاه‌ها و مرورگرها</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h4>مشتریان وفادار</h4>
+                    <p>سیستم امتیازدهی و تخفیف‌های ویژه</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. فست فود Detail -->
+    <div id="project-fastfood" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">رستوران فست فود</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="فست فود" class="detail-img">
+            <p class="detail-desc">
+                وبسایت فروشگاهی پیشرفته برای رستوران فست فود با قابلیت سفارش آنلاین، پیگیری سفارشات، 
+                سیستم پرداخت امن و پنل مدیریت جامع برای کنترل سفارشات و موجودی.
+                این سایت با تمرکز بر سرعت و کارایی طراحی شده تا تجربه خرید بهتری برای کاربران فراهم کند.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h4>سفارش آنلاین</h4>
+                    <p>سیستم سفارش سریع و آسان با پنل کاربری</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h4>تحویل سریع</h4>
+                    <p>پیگیری لحظه‌ای سفارشات و زمان تحویل</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-credit-card"></i>
+                    <h4>پرداخت امن</h4>
+                    <p>درگاه‌های پرداخت متنوع و امن</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>آمار و گزارش</h4>
+                    <p>پنل مدیریت با آمار فروش و عملکرد</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. کارخانه الکتریکی Detail -->
+    <div id="project-factory" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">کارخانه پروفیل الکتریکی</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="کارخانه" class="detail-img">
+            <p class="detail-desc">
+                وبسایت شرکتی حرفه‌ای برای کارخانه تولید پروفیل کرکره برقی با کاتالوگ محصولات تعاملی، 
+                سیستم درخواست قیمت خودکار، گالری پروژه‌های انجام شده و بخش اخبار و مقالات تخصصی.
+                این سایت به عنوان ویترین دیجیتال شرکت عمل کرده و اعتبار آن را افزایش داده است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-catalog"></i>
+                    <h4>کاتالوگ محصولات</h4>
+                    <p>نمایش جامع محصولات با مشخصات فنی</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h4>درخواست قیمت</h4>
+                    <p>سیستم درخواست قیمت خودکار و سریع</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-industry"></i>
+                    <h4>پروژه‌های نمونه</h4>
+                    <p>گالری پروژه‌های انجام شده با جزئیات</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-newspaper"></i>
+                    <h4>اخبار و مقالات</h4>
+                    <p>بخش اخبار صنعتی و مقالات تخصصی</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. لباس فروشی آنلاین Detail -->
+    <div id="project-clothing" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">لباس فروشی آنلاین</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="لباس فروشی" class="detail-img">
+            <p class="detail-desc">
+                فروشگاه اینترنتی پیشرفته با طراحی مدرن، سیستم مدیریت انبار، پرداخت امن، 
+                ارسال رایگان، ضمانت بازگشت کالا و پنل کاربری پیشرفته برای مشتریان.
+                این فروشگاه با استفاده از آخرین تکنولوژی‌های e-commerce طراحی شده است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-tshirt"></i>
+                    <h4>مدیریت انبار</h4>
+                    <p>سیستم پیشرفته مدیریت موجودی و سفارشات</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h4>ارسال رایگان</h4>
+                    <p>سیستم محاسبه هزینه ارسال هوشمند</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-check"></i>
+                    <h4>ضمانت بازگشت</h4>
+                    <p>سیستم ساده و سریع بازگشت کالا</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-percent"></i>
+                    <h4>تخفیف‌های ویژه</h4>
+                    <p>سیستم کوپن‌ها و تخفیف‌های دوره‌ای</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. کلینیک زیبایی Detail -->
+    <div id="project-beauty" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">کلینیک زیبایی</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1597030719108-58f577a8b4d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="کلینیک زیبایی" class="detail-img">
+            <p class="detail-desc">
+                وبسایت حرفه‌ای برای کلینیک زیبایی با تمرکز بر نمایش خدمات، گالری قبل و بعد، 
+                سیستم رزرو نوبت آنلاین و مقالات آموزشی در حوزه زیبایی.
+                طراحی با الهام از زیبایی و آرامش برای ایجاد تجربه کاربری مطلوب.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-spa"></i>
+                    <h4>خدمات زیبایی</h4>
+                    <p>نمایش جامع خدمات با قیمت‌گذاری</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-images"></i>
+                    <h4>گالری قبل و بعد</h4>
+                    <p>نمایش نتایج واقعی خدمات ارائه شده</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>رزرو نوبت</h4>
+                    <p>سیستم رزرو آنلاین با تقویم هوشمند</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-book"></i>
+                    <h4>مقالات آموزشی</h4>
+                    <p>محتوای تخصصی در حوزه زیبایی</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. آموزشگاه زبان Detail -->
+    <div id="project-language" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">آموزشگاه زبان</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="آموزشگاه زبان" class="detail-img">
+            <p class="detail-desc">
+                وبسایت آموزشگاه زبان با طراحی مدرن و کاربرپسند، شامل بخش‌های دوره‌های آموزشی، 
+                ثبت نام آنلاین، معرفی مدرسان، جدول کلاس‌ها و منابع آموزشی.
+                این سایت به عنوان پلتفرم دیجیتال آموزشگاه عمل کرده و دسترسی به خدمات را تسهیل کرده است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>دوره‌های آموزشی</h4>
+                    <p>نمایش جامع دوره‌ها با سطوح مختلف</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>ثبت نام آنلاین</h4>
+                    <p>سیستم ثبت نام سریع و امن</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h4>معرفی مدرسان</h4>
+                    <p>پروفایل مدرسان با تجربیات و مهارت‌ها</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-book-open"></i>
+                    <h4>منابع آموزشی</h4>
+                    <p>دسترسی به منابع و تمرین‌های رایگان</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. شرکت نرم‌افزاری Detail -->
+    <div id="project-software" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">شرکت نرم‌افزاری</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="شرکت نرم‌افزاری" class="detail-img">
+            <p class="detail-desc">
+                وبسایت شرکت نرم‌افزاری با تمرکز بر نمایش پروژه‌های انجام شده، خدمات تخصصی، 
+                تیم توسعه و آخرین اخبار فناوری. طراحی با الهام از دنیای دیجیتال و نوآوری.
+                این سایت به عنوان ویترین دیجیتال شرکت عمل کرده و توانمندی‌های آن را به نمایش گذاشته است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>پروژه‌های نمونه</h4>
+                    <p>نمایش پروژه‌های موفق با جزئیات فنی</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-cogs"></i>
+                    <h4>خدمات تخصصی</h4>
+                    <p>خدمات توسعه و مشاوره نرم‌افزاری</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users-cog"></i>
+                    <h4>تیم توسعه</h4>
+                    <p>معرفی متخصصان و توانمندی‌های تیم</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-newspaper"></i>
+                    <h4>اخبار فناوری</h4>
+                    <p>آخرین اخبار و مقالات تخصصی</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. فروشگاه لوازم التحریر Detail -->
+    <div id="project-stationery" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">فروشگاه لوازم التحریر</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="لوازم التحریر" class="detail-img">
+            <p class="detail-desc">
+                فروشگاه اینترنتی لوازم التحریر با طراحی رنگی و جذاب، شامل دسته‌بندی محصولات، 
+                جستجوی پیشرفته، سیستم پرداخت امن و ارسال سریع.
+                این سایت با تمرکز بر نیازهای دانش‌آموزان و دانشجویان طراحی شده است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-th-large"></i>
+                    <h4>دسته‌بندی محصولات</h4>
+                    <p>سازمان‌دهی محصولات بر اساس نوع و کاربرد</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-search"></i>
+                    <h4>جستجوی پیشرفته</h4>
+                    <p>جستجوی سریع و دقیق بین هزاران محصول</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-credit-card"></i>
+                    <h4>پرداخت امن</h4>
+                    <p>درگاه‌های پرداخت متنوع و امن</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h4>ارسال سریع</h4>
+                    <p>تحویل در کوتاه‌ترین زمان ممکن</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. سالن بدنسازی Detail -->
+    <div id="project-gym" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">سالن بدنسازی</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="سالن بدنسازی" class="detail-img">
+            <p class="detail-desc">
+                وبسایت سالن بدنسازی با طراحی انرژی‌بخش، شامل برنامه‌های تمرینی، 
+                ثبت نام آنلاین، معرفی مربیان و تجهیزات سالن.
+                این سایت به عنوان پلتفرم دیجیتال سالن عمل کرده و جذب مشتری را تسهیل کرده است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-dumbbell"></i>
+                    <h4>برنامه‌های تمرینی</h4>
+                    <p>برنامه‌های اختصاصی برای اهداف مختلف</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-plus"></i>
+                    <h4>ثبت نام آنلاین</h4>
+                    <p>سیستم ثبت نام سریع و آسان</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-friends"></i>
+                    <h4>معرفی مربیان</h4>
+                    <p>پروفایل مربیان با تخصص و تجربیات</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tools"></i>
+                    <h4>تجهیزات سالن</h4>
+                    <p>معرفی تجهیزات پیشرفته سالن</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. دفتر معماری Detail -->
+    <div id="project-architecture" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">دفتر معماری</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="دفتر معماری" class="detail-img">
+            <p class="detail-desc">
+                وبسایت دفتر معماری با طراحی هنری و خلاقانه، شامل نمایش پروژه‌های انجام شده، 
+                خدمات طراحی، معرفی تیم و آخرین اخبار معماری.
+                این سایت به عنوان گالری دیجیتال دفتر عمل کرده و توانمندی‌های آن را به نمایش گذاشته است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-building"></i>
+                    <h4>پروژه‌های نمونه</h4>
+                    <p>نمایش پروژه‌های موفق با جزئیات طراحی</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h4>خدمات طراحی</h4>
+                    <p>خدمات طراحی مسکن، تجاری و عمومی</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h4>تیم طراحی</h4>
+                    <p>معرفی معماران و متخصصان دفتر</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>آخرین اخبار</h4>
+                    <p>اخبار و مقالات حوزه معماری</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 11. فروشگاه لوازم خانگی Detail -->
+    <div id="project-appliances" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">فروشگاه لوازم خانگی</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="لوازم خانگی" class="detail-img">
+            <p class="detail-desc">
+                فروشگاه اینترنتی لوازم خانگی با طراحی مدرن، شامل مقایسه محصولات، 
+                نظرات کاربران، سیستم پرداخت امن و خدمات پس از فروش.
+                این سایت با تمرکز بر راحتی و صرفه‌جویی زمان طراحی شده است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-balance-scale"></i>
+                    <h4>مقایسه محصولات</h4>
+                    <p>مقایسه دقیق مشخصات و قیمت‌ها</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-comments"></i>
+                    <h4>نظرات کاربران</h4>
+                    <p>تجربیات واقعی خریداران</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>گارانتی و ضمانت</h4>
+                    <p>ضمانت بازگشت و خدمات پس از فروش</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck-loading"></i>
+                    <h4>تحویل درب منزل</h4>
+                    <p>نصب و راه‌اندازی توسط متخصصان</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12. کافی شاپ Detail -->
+    <div id="project-cafe" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">کافی شاپ</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1554119620-7a4a21588a7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="کافی شاپ" class="detail-img">
+            <p class="detail-desc">
+                وبسایت کافی شاپ با طراحی گرم و دوست‌داشتنی، شامل منوی دیجیتال، 
+                سیستم رزرو میز، معرفی محیط و تاریخچه کافی شاپ.
+                این سایت تجربه کافه را از قبل آغاز کرده و مشتریان را جذب می‌کند.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-coffee"></i>
+                    <h4>منوی دیجیتال</h4>
+                    <p>نمایش کامل منو با قیمت‌ها و توضیحات</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-calendar-check"></i>
+                    <h4>رزرو میز</h4>
+                    <p>سیستم رزرو آنلاین با تقویم هوشمند</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-utensils"></i>
+                    <h4>محیط و فضای کافه</h4>
+                    <p>معرفی فضای منحصربه‌فرد کافی شاپ</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-history"></i>
+                    <h4>تاریخچه برند</h4>
+                    <p>داستان عشق به قهوه و کیفیت</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 13. شرکت حمل و نقل Detail -->
+    <div id="project-transport" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">شرکت حمل و نقل</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="حمل و نقل" class="detail-img">
+            <p class="detail-desc">
+                وبسایت شرکت حمل و نقل با طراحی حرفه‌ای، شامل محاسبه آنلاین هزینه، 
+                پیگیری بار، خدمات مختلف حمل و خدمات بین‌المللی.
+                این سایت شفافیت و اعتماد را در خدمات حمل و نقل ایجاد کرده است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-calculator"></i>
+                    <h4>محاسبه آنلاین هزینه</h4>
+                    <p>محاسبه سریع و دقیق هزینه حمل</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck-loading"></i>
+                    <h4>پیگیری بار</h4>
+                    <p>ردیابی لحظه‌ای موقعیت بار</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-truck-moving"></i>
+                    <h4>خدمات متنوع</h4>
+                    <p>حمل داخلی، بین‌شهری و بین‌المللی</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>بیمه بار</h4>
+                    <p>ضمانت امنیت و سلامت بار</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 14. فروشگاه لوازم ورزشی Detail -->
+    <div id="project-sports" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">فروشگاه لوازم ورزشی</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="لوازم ورزشی" class="detail-img">
+            <p class="detail-desc">
+                فروشگاه اینترنتی لوازم ورزشی با طراحی پرانرژی، شامل راهنمای خرید، 
+                نظرات کاربران، برندهای معتبر و خدمات پس از فروش.
+                این سایت با تمرکز بر نیازهای ورزشکاران طراحی شده است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-running"></i>
+                    <h4>راهنمای خرید</h4>
+                    <p>راهنمای انتخاب تجهیزات مناسب</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-star"></i>
+                    <h4>برندهای معتبر</h4>
+                    <p>همکاری با برندهای جهانی ورزشی</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-comments"></i>
+                    <h4>نظرات کاربران</h4>
+                    <p>تجربیات واقعی خریداران</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-wrench"></i>
+                    <h4>خدمات تعمیر</h4>
+                    <p>تعمیر و نگهداری تجهیزات ورزشی</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 15. کلینیک دندانپزشکی Detail -->
+    <div id="project-dental" class="project-detail">
+        <div class="detail-content">
+            <div class="detail-header">
+                <h2 class="detail-title">کلینیک دندانپزشکی</h2>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-right"></i>
+                    بازگشت
+                </button>
+            </div>
+            <img src="https://images.unsplash.com/photo-1588776813677-77d8010ae684?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="کلینیک دندان" class="detail-img">
+            <p class="detail-desc">
+                وبسایت کلینیک دندانپزشکی با طراحی آرام‌بخش، شامل سیستم رزرو نوبت، 
+                مقالات آموزشی، معرفی خدمات و گالری قبل و بعد.
+                این سایت اعتماد و آرامش را در مراجعه به کلینیک ایجاد کرده است.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>رزرو نوبت آنلاین</h4>
+                    <p>سیستم رزرو سریع و آسان نوبت</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-book-medical"></i>
+                    <h4>مقاله‌های آموزشی</h4>
+                    <p>راهنمای مراقبت از دندان و لثه</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tooth"></i>
+                    <h4>خدمات تخصصی</h4>
+                    <p>خدمات پیشرفته دندانپزشکی</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-images"></i>
+                    <h4>گالری قبل و بعد</h4>
+                    <p>نمایش نتایج واقعی درمان‌ها</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 آژانس تبلیغاتی میراد. تمامی حقوق محفوظ است.</p>
+</footer>
+
+<script>
+    function handleProjectClick(projectId) {
+        showProject(projectId);
+    }
+
+    function showProject(projectId) {
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        portfolioGrid.classList.remove('active');
+        
+        const projectDetail = document.getElementById('project-' + projectId);
+        projectDetail.classList.add('active');
+        
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+    }
+
+    function goBack() {
+        document.querySelectorAll('.project-detail').forEach(detail => {
+            detail.classList.remove('active');
+        });
+        
+        const portfolioGrid = document.getElementById('portfolioGrid');
+        portfolioGrid.classList.add('active');
+        
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const activeProject = document.querySelector('.project-detail.active');
+            if (activeProject) {
+                goBack();
+            }
+        }
+    });
+
+    document.querySelectorAll('.view-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
+</script>
+
+</body>
+</html>
