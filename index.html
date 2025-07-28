@@ -40,7 +40,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 10% 20%, rgba(255, 204, 0, 0.1) 0%, transparent 20%),
                 radial-gradient(circle at 90% 80%, rgba(255, 204, 0, 0.1) 0%, transparent 20%);
             z-index: -1;
@@ -170,7 +170,7 @@
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
-            box-shadow: 
+            box-shadow:
                 0 15px 35px rgba(0,0,0,0.3),
                 0 0 0 1px rgba(255,255,255,0.05);
             backdrop-filter: blur(12px);
@@ -181,7 +181,7 @@
 
         .portfolio-item:hover {
             transform: translateY(-12px);
-            box-shadow: 
+            box-shadow:
                 0 25px 50px rgba(255, 204, 0, 0.25),
                 0 0 0 1px rgba(255, 204, 0, 0.4);
             background: rgba(255, 255, 255, 0.06);
@@ -284,13 +284,13 @@
         }
 
         @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px); 
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -356,6 +356,8 @@
 
         .detail-img {
             width: 100%;
+            height: 450px; /* Added fixed height */
+            object-fit: cover; /* Changed to cover for better fitting */
             border-radius: 15px;
             margin-bottom: 35px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
@@ -461,11 +463,11 @@
             h1 {
                 font-size: 2.8rem;
             }
-            
+
             .detail-title {
                 font-size: 2rem;
             }
-            
+
             .welcome-text {
                 font-size: 2rem;
             }
@@ -475,33 +477,33 @@
             h1 {
                 font-size: 2.3rem;
             }
-            
+
             .subtitle {
                 font-size: 1.1rem;
             }
-            
+
             .portfolio-grid {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                 gap: 25px;
             }
-            
+
             .detail-content {
                 padding: 25px 20px;
             }
-            
+
             .detail-title {
                 font-size: 1.8rem;
             }
-            
+
             .detail-header {
                 flex-direction: column;
                 align-items: stretch;
             }
-            
+
             .features {
                 grid-template-columns: 1fr;
             }
-            
+
             .welcome-text {
                 font-size: 1.8rem;
             }
@@ -511,27 +513,27 @@
             .container {
                 padding: 0 15px;
             }
-            
+
             header {
                 padding: 60px 0 40px;
             }
-            
+
             h1 {
                 font-size: 2rem;
             }
-            
+
             .portfolio-content {
                 padding: 20px;
             }
-            
+
             .portfolio-title {
                 font-size: 1.1rem;
             }
-            
+
             .portfolio-img {
                 height: 150px;
             }
-            
+
             .welcome-text {
                 font-size: 1.5rem;
             }
@@ -540,7 +542,6 @@
 </head>
 <body>
 
-<!-- Loading Screen -->
 <div class="loading-screen" id="loadingScreen">
     <div class="welcome-text">آژانس تبلیغاتی میراد</div>
     <div class="loading-spinner"></div>
@@ -553,21 +554,22 @@
             <img src="mirad-logo.png" alt="آژانس تبلیغاتی میراد" class="logo">
             <h1>آژانس تبلیغاتی میراد</h1>
             <p class="subtitle">نمونه کار وبسایت ها</p>
+
         </div>
     </header>
 
-    <!-- Portfolio Grid (Initial View) -->
     <div id="portfolioGrid" class="portfolio-grid active">
-        <!-- 1. رستوران سنتی -->
         <div class="portfolio-item" onclick="handleProjectClick('traditional')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/13500/restaurant-interior--800.jpg" alt="رستوران سنتی" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/119339/a-view-of-an-empty-restaurant-dining-room.jpg" alt="رستوران سنتی" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
+
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">رستوران</span>
                 <h3 class="portfolio-title">رستوران سنتی</h3>
                 <p class="portfolio-desc">طراحی وبسایت برای رستوران سنتی با منوی دیجیتال و سیستم رزرو آنلاین</p>
+
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('traditional')">
                     <i class="fas fa-eye"></i>
                     مشاهده جزئیات
@@ -575,14 +577,14 @@
             </div>
         </div>
 
-        <!-- 2. رستوران فست فود -->
         <div class="portfolio-item" onclick="handleProjectClick('fastfood')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/12847/fast-food-concept-with-burger-and-fries--800.jpg" alt="فست فود" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/128471/fast-food-concept-with-greasy-hamburger-and-french-fries.jpg" alt="فست فود" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
-                <span class="category-tag">فست فود</span>
+                <span class="category-tag">فست
+فود</span>
                 <h3 class="portfolio-title">رستوران فست فود</h3>
                 <p class="portfolio-desc">وبسایت فروشگاهی با سیستم سفارش آنلاین و پنل مدیریت</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('fastfood')">
@@ -592,14 +594,14 @@
             </div>
         </div>
 
-        <!-- 3. کارخانه الکتریکی -->
         <div class="portfolio-item" onclick="handleProjectClick('factory')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/11203/industrial-factory-with-smokestacks--800.jpg" alt="کارخانه" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/112030/industrial-factory-with-tall-chimneys-and-smoke.jpg" alt="کارخانه" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">صنعتی</span>
+
                 <h3 class="portfolio-title">کارخانه پروفیل الکتریکی</h3>
                 <p class="portfolio-desc">وبسایت شرکتی با کاتالوگ محصولات و سیستم درخواست قیمت</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('factory')">
@@ -609,14 +611,14 @@
             </div>
         </div>
 
-        <!-- 4. لباس فروشی آنلاین -->
         <div class="portfolio-item" onclick="handleProjectClick('clothing')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/13200/fashion-clothing-display--800.jpg" alt="لباس فروشی" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/132007/fashionable-clothing-on-hangers-in-a-boutique.jpg" alt="لباس فروشی" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">فروشگاه اینترنتی</span>
+
                 <h3 class="portfolio-title">لباس فروشی آنلاین</h3>
                 <p class="portfolio-desc">فروشگاه اینترنتی با سیستم پرداخت و مدیریت انبار</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('clothing')">
@@ -626,14 +628,14 @@
             </div>
         </div>
 
-        <!-- 5. کلینیک زیبایی -->
         <div class="portfolio-item" onclick="handleProjectClick('beauty')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/14500/beauty-salon-interior--800.jpg" alt="کلینیک زیبایی" class="portfolio-img">
+                <img src="https://picography.co/wp-content/uploads/2021/08/picography-cosmetic-products-and-aloe-vera-free-stock-photo-1-1024x683.jpg" alt="کلینیک زیبایی" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">سلامت و زیبایی</span>
+
                 <h3 class="portfolio-title">کلینیک زیبایی</h3>
                 <p class="portfolio-desc">وبسایت کلینیک زیبایی با سیستم رزرو نوبت و گالری خدمات</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('beauty')">
@@ -643,14 +645,14 @@
             </div>
         </div>
 
-        <!-- 6. آموزشگاه زبان -->
         <div class="portfolio-item" onclick="handleProjectClick('language')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/12500/students-in-classroom--800.jpg" alt="آموزشگاه زبان" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/125008/diverse-students-in-a-modern-classroom.jpg" alt="آموزشگاه زبان" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">آموزش</span>
+
                 <h3 class="portfolio-title">آموزشگاه زبان</h3>
                 <p class="portfolio-desc">وبسایت آموزشگاه زبان با سیستم ثبت نام و دوره‌های آنلاین</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('language')">
@@ -660,14 +662,14 @@
             </div>
         </div>
 
-        <!-- 7. شرکت نرم‌افزاری -->
         <div class="portfolio-item" onclick="handleProjectClick('software')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/13800/software-development-team--800.jpg" alt="شرکت نرم‌افزاری" class="portfolio-img">
+                <img src="https://picography.co/wp-content/uploads/2020/02/picography-working-at-computer-on-desk-1024x683.jpg" alt="شرکت نرم‌افزاری" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">فناوری</span>
+
                 <h3 class="portfolio-title">شرکت نرم‌افزاری</h3>
                 <p class="portfolio-desc">وبسایت شرکت نرم‌افزاری با نمایش پروژه‌ها و خدمات تخصصی</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('software')">
@@ -677,14 +679,14 @@
             </div>
         </div>
 
-        <!-- 8. فروشگاه لوازم التحریر -->
         <div class="portfolio-item" onclick="handleProjectClick('stationery')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/14200/stationery-store-display--800.jpg" alt="لوازم التحریر" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/87848/overhead-view-of-art-supplies-on-a-wooden-surface.jpg" alt="لوازم التحریر" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">فروشگاه</span>
+
                 <h3 class="portfolio-title">فروشگاه لوازم التحریر</h3>
                 <p class="portfolio-desc">فروشگاه آنلاین لوازم التحریر با دسته‌بندی محصولات</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('stationery')">
@@ -694,14 +696,14 @@
             </div>
         </div>
 
-        <!-- 9. سالن بدنسازی -->
         <div class="portfolio-item" onclick="handleProjectClick('gym')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/13000/gym-interior-with-equipment--800.jpg" alt="سالن بدنسازی" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/130006/modern-gym-interior-with-various-equipment.jpg" alt="سالن بدنسازی" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">ورزش</span>
+
                 <h3 class="portfolio-title">سالن بدنسازی</h3>
                 <p class="portfolio-desc">وبسایت سالن بدنسازی با برنامه تمرینی و ثبت نام آنلاین</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('gym')">
@@ -711,14 +713,14 @@
             </div>
         </div>
 
-        <!-- 10. دفتر معماری -->
         <div class="portfolio-item" onclick="handleProjectClick('architecture')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/12000/architecture-office-interior--800.jpg" alt="دفتر معماری" class="portfolio-img">
+                <img src="https://picography.co/wp-content/uploads/2018/11/picography-city-buildings-architecture-1024x683.jpg" alt="دفتر معماری" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">معماری</span>
+
                 <h3 class="portfolio-title">دفتر معماری</h3>
                 <p class="portfolio-desc">وبسایت دفتر معماری با نمایش پروژه‌ها و خدمات طراحی</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('architecture')">
@@ -728,14 +730,14 @@
             </div>
         </div>
 
-        <!-- 11. فروشگاه لوازم خانگی -->
         <div class="portfolio-item" onclick="handleProjectClick('appliances')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/14000/home-appliances-store--800.jpg" alt="لوازم خانگی" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/140003/modern-kitchen-with-home-appliances.jpg" alt="لوازم خانگی" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">فروشگاه</span>
+
                 <h3 class="portfolio-title">فروشگاه لوازم خانگی</h3>
                 <p class="portfolio-desc">فروشگاه آنلاین لوازم خانگی با مقایسه محصولات</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('appliances')">
@@ -745,14 +747,14 @@
             </div>
         </div>
 
-        <!-- 12. کافی شاپ -->
         <div class="portfolio-item" onclick="handleProjectClick('cafe')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/13300/coffee-shop-interior--800.jpg" alt="کافی شاپ" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/116493/cup-of-coffee-on-a-wooden-table.jpg" alt="کافی شاپ" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">رستوران</span>
+
                 <h3 class="portfolio-title">کافی شاپ</h3>
                 <p class="portfolio-desc">وبسایت کافی شاپ با منوی دیجیتال و سیستم رزرو میز</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('cafe')">
@@ -762,14 +764,14 @@
             </div>
         </div>
 
-        <!-- 13. شرکت حمل و نقل -->
         <div class="portfolio-item" onclick="handleProjectClick('transport')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/12700/logistics-transport-company--800.jpg" alt="حمل و نقل" class="portfolio-img">
+                <img src="https://picography.co/wp-content/uploads/2019/09/picography-container-ship-in-port-1024x683.jpg" alt="حمل و نقل" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">حمل و نقل</span>
+
                 <h3 class="portfolio-title">شرکت حمل و نقل</h3>
                 <p class="portfolio-desc">وبسایت شرکت حمل و نقل با محاسبه آنلاین هزینه</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('transport')">
@@ -779,14 +781,14 @@
             </div>
         </div>
 
-        <!-- 14. فروشگاه لوازم ورزشی -->
         <div class="portfolio-item" onclick="handleProjectClick('sports')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/13600/sports-equipment-store--800.jpg" alt="لوازم ورزشی" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/136009/various-sports-equipment-on-display.jpg" alt="لوازم ورزشی" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">ورزش</span>
+
                 <h3 class="portfolio-title">فروشگاه لوازم ورزشی</h3>
                 <p class="portfolio-desc">فروشگاه آنلاین لوازم ورزشی با راهنمای خرید</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('sports')">
@@ -796,14 +798,14 @@
             </div>
         </div>
 
-        <!-- 15. کلینیک دندانپزشکی -->
         <div class="portfolio-item" onclick="handleProjectClick('dental')">
             <div class="portfolio-img-wrapper">
-                <img src="https://freerangestock.com/thumbnail/14800/dental-clinic-interior--800.jpg" alt="کلینیک دندان" class="portfolio-img">
+                <img src="https://freerangestock.com/sample/148003/modern-dental-clinic-interior.jpg" alt="کلینیک دندان" class="portfolio-img">
                 <div class="portfolio-overlay"></div>
             </div>
             <div class="portfolio-content">
                 <span class="category-tag">سلامت</span>
+
                 <h3 class="portfolio-title">کلینیک دندانپزشکی</h3>
                 <p class="portfolio-desc">وبسایت کلینیک دندان با سیستم رزرو نوبت و مقالات آموزشی</p>
                 <button class="view-btn" onclick="event.stopPropagation(); showProject('dental')">
@@ -814,8 +816,6 @@
         </div>
     </div>
 
-    <!-- Project Detail Sections -->
-    <!-- 1. رستوران سنتی Detail -->
     <div id="project-traditional" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -825,9 +825,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/13500/restaurant-interior--800.jpg" alt="رستوران سنتی" class="detail-img">
+            <img src="https://freerangestock.com/sample/119339/a-view-of-an-empty-restaurant-dining-room.jpg" alt="رستوران سنتی" class="detail-img">
             <p class="detail-desc">
-                طراحی وبسایت حرفه‌ای برای رستوران سنتی با تمرکز بر تجربه کاربری و ظاهر اصیل ایرانی. 
+                طراحی وبسایت حرفه‌ای برای رستوران سنتی با تمرکز بر تجربه کاربری و ظاهر اصیل ایرانی.
                 شامل منوی دیجیتال تعاملی، سیستم رزرو آنلاین، گالری تصاویر غذاها و امکانات ویژه برای مشتریان وفادار.
                 این پروژه با استفاده از تکنولوژی‌های مدرن طراحی شده تا تجربه بهتری برای مشتریان فراهم کند.
             </p>
@@ -835,28 +835,31 @@
                 <div class="feature">
                     <i class="fas fa-utensils"></i>
                     <h4>منوی دیجیتال</h4>
-                    <p>نمایش تعاملی منو با قابلیت جستجو و فیلتر</p>
+                    <p>نمایش تعاملی منو با قابلیت جستجو و
+فیلتر</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-calendar-check"></i>
                     <h4>رزرو آنلاین</h4>
-                    <p>سیستم رزرو میز با تقویم هوشمند</p>
+                    <p>سیستم رزرو میز با
+تقویم هوشمند</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-mobile-alt"></i>
                     <h4>واکنشگرا</h4>
-                    <p>سازگار با تمام دستگاه‌ها و مرورگرها</p>
+                    <p>سازگار با تمام دستگاه‌ها
+و مرورگرها</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-users"></i>
                     <h4>مشتریان وفادار</h4>
-                    <p>سیستم امتیازدهی و تخفیف‌های ویژه</p>
+                    <p>سیستم امتیازدهی و
+تخفیف‌های ویژه</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 2. فست فود Detail -->
     <div id="project-fastfood" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -866,9 +869,10 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/12847/fast-food-concept-with-burger-and-fries--800.jpg" alt="فست فود" class="detail-img">
+            <img src="https://freerangestock.com/sample/128471/fast-food-concept-with-greasy-hamburger-and-french-fries.jpg" alt="فست
+فود" class="detail-img">
             <p class="detail-desc">
-                وبسایت فروشگاهی پیشرفته برای رستوران فست فود با قابلیت سفارش آنلاین، پیگیری سفارشات، 
+                وبسایت فروشگاهی پیشرفته برای رستوران فست فود با قابلیت سفارش آنلاین، پیگیری سفارشات،
                 سیستم پرداخت امن و پنل مدیریت جامع برای کنترل سفارشات و موجودی.
                 این سایت با تمرکز بر سرعت و کارایی طراحی شده تا تجربه خرید بهتری برای کاربران فراهم کند.
             </p>
@@ -876,40 +880,44 @@
                 <div class="feature">
                     <i class="fas fa-shopping-cart"></i>
                     <h4>سفارش آنلاین</h4>
-                    <p>سیستم سفارش سریع و آسان با پنل کاربری</p>
+                    <p>سیستم سفارش سریع و آسان با پنل
+کاربری</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-truck"></i>
                     <h4>تحویل سریع</h4>
-                    <p>پیگیری لحظه‌ای سفارشات و زمان تحویل</p>
+                    <p>پیگیری لحظه‌ای سفارشات و
+زمان تحویل</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-credit-card"></i>
                     <h4>پرداخت امن</h4>
-                    <p>درگاه‌های پرداخت متنوع و امن</p>
+                    <p>درگاه‌های پرداخت متنوع
+و امن</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-chart-line"></i>
                     <h4>آمار و گزارش</h4>
-                    <p>پنل مدیریت با آمار فروش و عملکرد</p>
+                    <p>پنل مدیریت
+با آمار فروش و عملکرد</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 3. کارخانه الکتریکی Detail -->
     <div id="project-factory" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
-                <h2 class="detail-title">کارخانه پروفیل الکتریکی</h2>
+                <h2 class="detail-title">کارخانه پروفیل
+الکتریکی</h2>
                 <button class="back-btn" onclick="goBack()">
                     <i class="fas fa-arrow-right"></i>
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/11203/industrial-factory-with-smokestacks--800.jpg" alt="کارخانه" class="detail-img">
+            <img src="https://freerangestock.com/sample/112030/industrial-factory-with-tall-chimneys-and-smoke.jpg" alt="کارخانه" class="detail-img">
             <p class="detail-desc">
-                وبسایت شرکتی حرفه‌ای برای کارخانه تولید پروفیل کرکره برقی با کاتالوگ محصولات تعاملی، 
+                وبسایت شرکتی حرفه‌ای برای کارخانه تولید پروفیل کرکره برقی با کاتالوگ محصولات تعاملی،
                 سیستم درخواست قیمت خودکار، گالری پروژه‌های انجام شده و بخش اخبار و مقالات تخصصی.
                 این سایت به عنوان ویترین دیجیتال شرکت عمل کرده و اعتبار آن را افزایش داده است.
             </p>
@@ -927,18 +935,19 @@
                 <div class="feature">
                     <i class="fas fa-industry"></i>
                     <h4>پروژه‌های نمونه</h4>
-                    <p>گالری پروژه‌های انجام شده با جزئیات</p>
+                    <p>گالری پروژه‌های انجام شده با
+جزئیات</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-newspaper"></i>
                     <h4>اخبار و مقالات</h4>
-                    <p>بخش اخبار صنعتی و مقالات تخصصی</p>
+                    <p>بخش اخبار صنعتی
+و مقالات تخصصی</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 4. لباس فروشی آنلاین Detail -->
     <div id="project-clothing" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -948,9 +957,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/13200/fashion-clothing-display--800.jpg" alt="لباس فروشی" class="detail-img">
+            <img src="https://freerangestock.com/sample/132007/fashionable-clothing-on-hangers-in-a-boutique.jpg" alt="لباس فروشی" class="detail-img">
             <p class="detail-desc">
-                فروشگاه اینترنتی پیشرفته با طراحی مدرن، سیستم مدیریت انبار، پرداخت امن، 
+                فروشگاه اینترنتی پیشرفته با طراحی مدرن، سیستم مدیریت انبار، پرداخت امن،
                 ارسال رایگان، ضمانت بازگشت کالا و پنل کاربری پیشرفته برای مشتریان.
                 این فروشگاه با استفاده از آخرین تکنولوژی‌های e-commerce طراحی شده است.
             </p>
@@ -979,7 +988,6 @@
         </div>
     </div>
 
-    <!-- 5. کلینیک زیبایی Detail -->
     <div id="project-beauty" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -989,9 +997,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/14500/beauty-salon-interior--800.jpg" alt="کلینیک زیبایی" class="detail-img">
+            <img src="https://picography.co/wp-content/uploads/2021/08/picography-cosmetic-products-and-aloe-vera-free-stock-photo-1-1024x683.jpg" alt="کلینیک زیبایی" class="detail-img">
             <p class="detail-desc">
-                وبسایت حرفه‌ای برای کلینیک زیبایی با تمرکز بر نمایش خدمات، گالری قبل و بعد، 
+                وبسایت حرفه‌ای برای کلینیک زیبایی با تمرکز بر نمایش خدمات، گالری قبل و بعد،
                 سیستم رزرو نوبت آنلاین و مقالات آموزشی در حوزه زیبایی.
                 طراحی با الهام از زیبایی و آرامش برای ایجاد تجربه کاربری مطلوب.
             </p>
@@ -1004,23 +1012,25 @@
                 <div class="feature">
                     <i class="fas fa-images"></i>
                     <h4>گالری قبل و بعد</h4>
-                    <p>نمایش نتایج واقعی خدمات ارائه شده</p>
+                    <p>نمایش نتایج واقعی خدمات ارائه
+شده</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-calendar-alt"></i>
                     <h4>رزرو نوبت</h4>
-                    <p>سیستم رزرو آنلاین با تقویم هوشمند</p>
+                    <p>سیستم رزرو آنلاین با
+تقویم هوشمند</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-book"></i>
                     <h4>مقالات آموزشی</h4>
-                    <p>محتوای تخصصی در حوزه زیبایی</p>
+                    <p>محتوای تخصصی در
+حوزه زیبایی</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 6. آموزشگاه زبان Detail -->
     <div id="project-language" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -1030,9 +1040,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/12500/students-in-classroom--800.jpg" alt="آموزشگاه زبان" class="detail-img">
+            <img src="https://freerangestock.com/sample/125008/diverse-students-in-a-modern-classroom.jpg" alt="آموزشگاه زبان" class="detail-img">
             <p class="detail-desc">
-                وبسایت آموزشگاه زبان با طراحی مدرن و کاربرپسند، شامل بخش‌های دوره‌های آموزشی، 
+                وبسایت آموزشگاه زبان با طراحی مدرن و کاربرپسند، شامل بخش‌های دوره‌های آموزشی،
                 ثبت نام آنلاین، معرفی مدرسان، جدول کلاس‌ها و منابع آموزشی.
                 این سایت به عنوان پلتفرم دیجیتال آموزشگاه عمل کرده و دسترسی به خدمات را تسهیل کرده است.
             </p>
@@ -1045,23 +1055,25 @@
                 <div class="feature">
                     <i class="fas fa-user-graduate"></i>
                     <h4>ثبت نام آنلاین</h4>
-                    <p>سیستم ثبت نام سریع و امن</p>
+                    <p>سیستم ثبت نام سریع و
+امن</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-chalkboard-teacher"></i>
                     <h4>معرفی مدرسان</h4>
-                    <p>پروفایل مدرسان با تجربیات و مهارت‌ها</p>
+                    <p>پروفایل مدرسان با تجربیات
+و مهارت‌ها</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-book-open"></i>
                     <h4>منابع آموزشی</h4>
-                    <p>دسترسی به منابع و تمرین‌های رایگان</p>
+                    <p>دسترسی به منابع
+و تمرین‌های رایگان</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 7. شرکت نرم‌افزاری Detail -->
     <div id="project-software" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -1071,10 +1083,11 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/13800/software-development-team--800.jpg" alt="شرکت نرم‌افزاری" class="detail-img">
+            <img src="https://picography.co/wp-content/uploads/2020/02/picography-working-at-computer-on-desk-1024x683.jpg" alt="شرکت نرم‌افزاری" class="detail-img">
             <p class="detail-desc">
-                وبسایت شرکت نرم‌افزاری با تمرکز بر نمایش پروژه‌های انجام شده، خدمات تخصصی، 
-                تیم توسعه و آخرین اخبار فناوری. طراحی با الهام از دنیای دیجیتال و نوآوری.
+                وبسایت شرکت نرم‌افزاری با تمرکز بر نمایش پروژه‌های انجام شده، خدمات تخصصی،
+                تیم توسعه و آخرین اخبار فناوری.
+                طراحی با الهام از دنیای دیجیتال و نوآوری.
                 این سایت به عنوان ویترین دیجیتال شرکت عمل کرده و توانمندی‌های آن را به نمایش گذاشته است.
             </p>
             <div class="features">
@@ -1102,7 +1115,6 @@
         </div>
     </div>
 
-    <!-- 8. فروشگاه لوازم التحریر Detail -->
     <div id="project-stationery" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -1112,9 +1124,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/14200/stationery-store-display--800.jpg" alt="لوازم التحریر" class="detail-img">
+            <img src="https://freerangestock.com/sample/87848/overhead-view-of-art-supplies-on-a-wooden-surface.jpg" alt="لوازم التحریر" class="detail-img">
             <p class="detail-desc">
-                فروشگاه اینترنتی لوازم التحریر با طراحی رنگی و جذاب، شامل دسته‌بندی محصولات، 
+                فروشگاه اینترنتی لوازم التحریر با طراحی رنگی و جذاب، شامل دسته‌بندی محصولات،
                 جستجوی پیشرفته، سیستم پرداخت امن و ارسال سریع.
                 این سایت با تمرکز بر نیازهای دانش‌آموزان و دانشجویان طراحی شده است.
             </p>
@@ -1127,23 +1139,25 @@
                 <div class="feature">
                     <i class="fas fa-search"></i>
                     <h4>جستجوی پیشرفته</h4>
-                    <p>جستجوی سریع و دقیق بین هزاران محصول</p>
+                    <p>جستجوی سریع و دقیق بین
+هزاران محصول</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-credit-card"></i>
                     <h4>پرداخت امن</h4>
-                    <p>درگاه‌های پرداخت متنوع و امن</p>
+                    <p>درگاه‌های پرداخت متنوع
+و امن</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-truck"></i>
                     <h4>ارسال سریع</h4>
-                    <p>تحویل در کوتاه‌ترین زمان ممکن</p>
+                    <p>تحویل در کوتاه‌ترین
+زمان ممکن</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 9. سالن بدنسازی Detail -->
     <div id="project-gym" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -1153,9 +1167,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/13000/gym-interior-with-equipment--800.jpg" alt="سالن بدنسازی" class="detail-img">
+            <img src="https://freerangestock.com/sample/130006/modern-gym-interior-with-various-equipment.jpg" alt="سالن بدنسازی" class="detail-img">
             <p class="detail-desc">
-                وبسایت سالن بدنسازی با طراحی انرژی‌بخش، شامل برنامه‌های تمرینی، 
+                وبسایت سالن بدنسازی با طراحی انرژی‌بخش، شامل برنامه‌های تمرینی،
                 ثبت نام آنلاین، معرفی مربیان و تجهیزات سالن.
                 این سایت به عنوان پلتفرم دیجیتال سالن عمل کرده و جذب مشتری را تسهیل کرده است.
             </p>
@@ -1173,7 +1187,8 @@
                 <div class="feature">
                     <i class="fas fa-user-friends"></i>
                     <h4>معرفی مربیان</h4>
-                    <p>پروفایل مربیان با تخصص و تجربیات</p>
+                    <p>پروفایل مربیان با تخصص و
+تجربیات</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-tools"></i>
@@ -1184,7 +1199,6 @@
         </div>
     </div>
 
-    <!-- 10. دفتر معماری Detail -->
     <div id="project-architecture" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -1194,9 +1208,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/12000/architecture-office-interior--800.jpg" alt="دفتر معماری" class="detail-img">
+            <img src="https://picography.co/wp-content/uploads/2018/11/picography-city-buildings-architecture-1024x683.jpg" alt="دفتر معماری" class="detail-img">
             <p class="detail-desc">
-                وبسایت دفتر معماری با طراحی هنری و خلاقانه، شامل نمایش پروژه‌های انجام شده، 
+                وبسایت دفتر معماری با طراحی هنری و خلاقانه، شامل نمایش پروژه‌های انجام شده،
                 خدمات طراحی، معرفی تیم و آخرین اخبار معماری.
                 این سایت به عنوان گالری دیجیتال دفتر عمل کرده و توانمندی‌های آن را به نمایش گذاشته است.
             </p>
@@ -1209,7 +1223,7 @@
                 <div class="feature">
                     <i class="fas fa-ruler-combined"></i>
                     <h4>خدمات طراحی</h4>
-                    <p>خدمات طراحی مسکن، تجاری و عمومی</p>
+                    <p>خدمات طراحی مسکن, تجاری و عمومی</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-users"></i>
@@ -1225,7 +1239,6 @@
         </div>
     </div>
 
-    <!-- 11. فروشگاه لوازم خانگی Detail -->
     <div id="project-appliances" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -1235,9 +1248,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/14000/home-appliances-store--800.jpg" alt="لوازم خانگی" class="detail-img">
+            <img src="https://freerangestock.com/sample/140003/modern-kitchen-with-home-appliances.jpg" alt="لوازم خانگی" class="detail-img">
             <p class="detail-desc">
-                فروشگاه اینترنتی لوازم خانگی با طراحی مدرن، شامل مقایسه محصولات، 
+                فروشگاه اینترنتی لوازم خانگی با طراحی مدرن، شامل مقایسه محصولات،
                 نظرات کاربران، سیستم پرداخت امن و خدمات پس از فروش.
                 این سایت با تمرکز بر راحتی و صرفه‌جویی زمان طراحی شده است.
             </p>
@@ -1251,7 +1264,7 @@
                     <i class="fas fa-comments"></i>
                     <h4>نظرات کاربران</h4>
                     <p>تجربیات واقعی خریداران</p>
-                </div>
+                 </div>
                 <div class="feature">
                     <i class="fas fa-shield-alt"></i>
                     <h4>گارانتی و ضمانت</h4>
@@ -1266,7 +1279,6 @@
         </div>
     </div>
 
-    <!-- 12. کافی شاپ Detail -->
     <div id="project-cafe" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -1276,9 +1288,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/13300/coffee-shop-interior--800.jpg" alt="کافی شاپ" class="detail-img">
+            <img src="https://freerangestock.com/sample/116493/cup-of-coffee-on-a-wooden-table.jpg" alt="کافی شاپ" class="detail-img">
             <p class="detail-desc">
-                وبسایت کافی شاپ با طراحی گرم و دوست‌داشتنی، شامل منوی دیجیتال، 
+                وبسایت کافی شاپ با طراحی گرم و دوست‌داشتنی، شامل منوی دیجیتال،
                 سیستم رزرو میز، معرفی محیط و تاریخچه کافی شاپ.
                 این سایت تجربه کافه را از قبل آغاز کرده و مشتریان را جذب می‌کند.
             </p>
@@ -1291,35 +1303,38 @@
                 <div class="feature">
                     <i class="fas fa-calendar-check"></i>
                     <h4>رزرو میز</h4>
-                    <p>سیستم رزرو آنلاین با تقویم هوشمند</p>
+                    <p>سیستم رزرو آنلاین با تقویم
+هوشمند</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-utensils"></i>
                     <h4>محیط و فضای کافه</h4>
-                    <p>معرفی فضای منحصربه‌فرد کافی شاپ</p>
+                    <p>معرفی فضای
+منحصربه‌فرد کافی شاپ</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-history"></i>
                     <h4>تاریخچه برند</h4>
-                    <p>داستان عشق به قهوه و کیفیت</p>
+                    <p>داستان عشق
+به قهوه و کیفیت</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 13. شرکت حمل و نقل Detail -->
     <div id="project-transport" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
-                <h2 class="detail-title">شرکت حمل و نقل</h2>
+                <h2 class="detail-title">شرکت
+حمل و نقل</h2>
                 <button class="back-btn" onclick="goBack()">
                     <i class="fas fa-arrow-right"></i>
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/12700/logistics-transport-company--800.jpg" alt="حمل و نقل" class="detail-img">
+            <img src="https://picography.co/wp-content/uploads/2019/09/picography-container-ship-in-port-1024x683.jpg" alt="حمل و نقل" class="detail-img">
             <p class="detail-desc">
-                وبسایت شرکت حمل و نقل با طراحی حرفه‌ای، شامل محاسبه آنلاین هزینه، 
+                وبسایت شرکت حمل و نقل با طراحی حرفه‌ای، شامل محاسبه آنلاین هزینه،
                 پیگیری بار، خدمات مختلف حمل و خدمات بین‌المللی.
                 این سایت شفافیت و اعتماد را در خدمات حمل و نقل ایجاد کرده است.
             </p>
@@ -1337,7 +1352,7 @@
                 <div class="feature">
                     <i class="fas fa-truck-moving"></i>
                     <h4>خدمات متنوع</h4>
-                    <p>حمل داخلی، بین‌شهری و بین‌المللی</p>
+                    <p>حمل داخلی, بین‌شهری و بین‌المللی</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-shield-alt"></i>
@@ -1348,7 +1363,6 @@
         </div>
     </div>
 
-    <!-- 14. فروشگاه لوازم ورزشی Detail -->
     <div id="project-sports" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -1358,9 +1372,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/13600/sports-equipment-store--800.jpg" alt="لوازم ورزشی" class="detail-img">
+            <img src="https://freerangestock.com/sample/136009/various-sports-equipment-on-display.jpg" alt="لوازم ورزشی" class="detail-img">
             <p class="detail-desc">
-                فروشگاه اینترنتی لوازم ورزشی با طراحی پرانرژی، شامل راهنمای خرید، 
+                فروشگاه اینترنتی لوازم ورزشی با طراحی پرانرژی، شامل راهنمای خرید،
                 نظرات کاربران، برندهای معتبر و خدمات پس از فروش.
                 این سایت با تمرکز بر نیازهای ورزشکاران طراحی شده است.
             </p>
@@ -1369,27 +1383,26 @@
                     <i class="fas fa-running"></i>
                     <h4>راهنمای خرید</h4>
                     <p>راهنمای انتخاب تجهیزات مناسب</p>
-                </div>
+                 </div>
                 <div class="feature">
                     <i class="fas fa-star"></i>
                     <h4>برندهای معتبر</h4>
                     <p>همکاری با برندهای جهانی ورزشی</p>
-                </div>
+                 </div>
                 <div class="feature">
                     <i class="fas fa-comments"></i>
                     <h4>نظرات کاربران</h4>
                     <p>تجربیات واقعی خریداران</p>
-                </div>
+                  </div>
                 <div class="feature">
                     <i class="fas fa-wrench"></i>
                     <h4>خدمات تعمیر</h4>
                     <p>تعمیر و نگهداری تجهیزات ورزشی</p>
-                </div>
+                  </div>
             </div>
         </div>
     </div>
 
-    <!-- 15. کلینیک دندانپزشکی Detail -->
     <div id="project-dental" class="project-detail">
         <div class="detail-content">
             <div class="detail-header">
@@ -1399,9 +1412,9 @@
                     بازگشت
                 </button>
             </div>
-            <img src="https://freerangestock.com/thumbnail/14800/dental-clinic-interior--800.jpg" alt="کلینیک دندان" class="detail-img">
+            <img src="https://freerangestock.com/sample/148003/modern-dental-clinic-interior.jpg" alt="کلینیک دندان" class="detail-img">
             <p class="detail-desc">
-                وبسایت کلینیک دندانپزشکی با طراحی آرام‌بخش، شامل سیستم رزرو نوبت، 
+                وبسایت کلینیک دندانپزشکی با طراحی آرام‌بخش، شامل سیستم رزرو نوبت،
                 مقالات آموزشی، معرفی خدمات و گالری قبل و بعد.
                 این سایت اعتماد و آرامش را در مراجعه به کلینیک ایجاد کرده است.
             </p>
@@ -1414,7 +1427,8 @@
                 <div class="feature">
                     <i class="fas fa-book-medical"></i>
                     <h4>مقاله‌های آموزشی</h4>
-                    <p>راهنمای مراقبت از دندان و لثه</p>
+                    <p>راهنمای مراقبت از دندان و
+لثه</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-tooth"></i>
@@ -1439,7 +1453,7 @@
     // Loading Screen
     document.addEventListener('DOMContentLoaded', function() {
         const loadingScreen = document.getElementById('loadingScreen');
-        
+
         // Hide loading screen on click
         loadingScreen.addEventListener('click', function() {
             loadingScreen.classList.add('hidden');
@@ -1447,16 +1461,7 @@
                 loadingScreen.style.display = 'none';
             }, 800);
         });
-        
-        // Auto hide after 3 seconds
-        setTimeout(() => {
-            loadingScreen.classList.add('hidden');
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 800);
-        }, 3000);
     });
-
     function handleProjectClick(projectId) {
         showProject(projectId);
     }
@@ -1464,10 +1469,9 @@
     function showProject(projectId) {
         const portfolioGrid = document.getElementById('portfolioGrid');
         portfolioGrid.classList.remove('active');
-        
         const projectDetail = document.getElementById('project-' + projectId);
         projectDetail.classList.add('active');
-        
+
         setTimeout(() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 100);
@@ -1477,10 +1481,9 @@
         document.querySelectorAll('.project-detail').forEach(detail => {
             detail.classList.remove('active');
         });
-        
         const portfolioGrid = document.getElementById('portfolioGrid');
         portfolioGrid.classList.add('active');
-        
+
         setTimeout(() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }, 100);
@@ -1494,7 +1497,6 @@
             }
         }
     });
-
     document.querySelectorAll('.view-btn').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
